@@ -1,21 +1,34 @@
 body{
     margin: 0;
     margin-left: 10vh;
-    margin-right: 10vh;
+    margin-right: 10vh;    
+    height: 100vh;
+    background: linear-gradient(to bottom left, #848991 50%, #acb4b6 100%);
+    background-repeat: no-repeat;
+    font-family: 'Rubik', sans-serif;
 }
 .navbar {
+    height: 7.5%;
     width: 100%;
     background-color: #555;
     overflow: auto;
 }
 
 .navbar a {
+    height: 66%;
+    width: 20%;
     float: left;
     text-align: center;
     padding: 12px;
     color: white;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    width: 80%;
 }
 
 .navbar a:hover {
@@ -26,18 +39,39 @@ body{
     background-color: #04AA6D;
 }
 
-body {
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top : 0%;
-    background: linear-gradient(to bottom left, #EF8D9C 50%, #FFC39E 100%);
-    background-repeat: no-repeat;
-}
 
 #input{
     margin-top: 1vh;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #555;
+    height: 5%;
 }
 #date{
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    margin-left: 0.5vh;
+    width: 17%;
+    background-color: #04AA6D;
+    border: none;
+    color: black;
+    display: flex;
+}
+#text-area{
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    width: 65%;
+    display: flex;
+    font-size: 15px;
+}
 
+.submit{
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    margin-right: 0.5vh;
+    width: 7.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
