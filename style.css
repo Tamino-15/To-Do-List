@@ -40,16 +40,6 @@ body {
     background-color: #04AA6D;
 }
 
-<<<<<<< HEAD
-=======
-body {
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 0%;
-    background: linear-gradient(to bottom left, #EF8D9C 50%, #FFC39E 100%);
-    background-repeat: no-repeat;
-}
->>>>>>> 86965a8b9efed52e3a42f32d38e1bf977bbc4e72
 
 #input {
     margin-top: 1vh;
@@ -59,7 +49,6 @@ body {
     background-color: #555;
     height: 5%;
 }
-<<<<<<< HEAD
 #date{
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
@@ -86,23 +75,4 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-=======
-
-#date {}
-
-table {
-    margin-top: 35px;
-}
-
-table,
-th,
-td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-table td button {
-    display: inline;
-    margin-left: 10%;
-    margin-right: 10%;
->>>>>>> 86965a8b9efed52e3a42f32d38e1bf977bbc4e72
 }
