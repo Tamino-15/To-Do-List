@@ -1,7 +1,7 @@
 body {
     margin: 0;
     margin-left: 10vh;
-    margin-right: 10vh;    
+    margin-right: 10vh;
     height: 100vh;
     background: linear-gradient(to bottom left, #848991 50%, #acb4b6 100%);
     background-repeat: no-repeat;
@@ -28,7 +28,8 @@ body {
     align-items: center;
     justify-content: center;
 }
-.title{
+
+.title {
     width: 80%;
 }
 
@@ -49,7 +50,8 @@ body {
     background-color: #555;
     height: 5%;
 }
-#date{
+
+#date {
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
     margin-left: 0.5vh;
@@ -59,7 +61,8 @@ body {
     color: black;
     display: flex;
 }
-#text-area{
+
+#text-area {
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
     width: 65%;
@@ -67,7 +70,7 @@ body {
     font-size: 15px;
 }
 
-.submit{
+.submit {
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
     margin-right: 0.5vh;
@@ -75,4 +78,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* ========================== thingsToDo div ========================== */
+#thingsToDo {
+    margin-top: 50px;
+}
+table, th, td {
+    border-width: 2px;
+    border-style: outset;
+}
+table td button {
+    display: inline;
+    margin-left: 15%;
 }
