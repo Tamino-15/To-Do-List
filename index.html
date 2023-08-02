@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <div class="navbar">
         <a class="active" href="#"><i class="fa fa-fw fa-home"></i>LOGO</a>
         <a href="#">TITLE</a>
@@ -21,6 +22,27 @@
         <input type="date" name="Date" id="date">
         <input type="text" name="text-area" id="text-area" placeholder="What is your To-Do?">
         <button type="submit">Add</button>
+    </div>
+
+    <div id="thingsToDo">
+        <table style="width: 100%">
+            <tr>
+                <th>Date</th>
+                <th>Tick</th>
+                <th>Task Description</th>
+                <th>Options</th>
+            </tr>
+
+            <tr>
+                <td>06/08/2023</td>
+                <td><input type="checkbox" onclick="return false;"/></td>
+                <td>You have to find a gym club</td>
+                <td>
+                    <button type="submit">Update</button>
+                    <button type="submit">Delete</button>
+                </td>
+            </tr>
+        </table>
     </div>
 
     
