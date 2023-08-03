@@ -89,13 +89,23 @@ body {
 
 /* ========================== thingsToDo div ========================== */
 #thingsToDo {
-    margin-top: 50px;
+    margin-top: 1vh;
+    width: 100%;
 }
-table, th, td {
-    border-width: 2px;
-    border-style: outset;
+table, td, tr{
+    height: 4vh;
+    color: black;
+    border: none;
+    border-color: #000;
 }
-table td button {
-    display: inline;
-    margin-left: 15%;
+table{
+    width:100%;
+}
+td{
+    width: 20%;
+    text-align: center;
+    background-color: #02744a;
+}
+#td3, #td4{
+    width:5%;
 }
