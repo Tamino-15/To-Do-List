@@ -1,42 +1,73 @@
-function getTodo(){
-    let date = document.getElementById('date').value;
-    let text = document.getElementById('text-area').value;
-    console.log(date);
-    console.log(text);
+let text = document.getElementById("text");
+const addTaskButton = document.getElementById("add-btn");
+const saveTaskButton = document.getElementById("save-todo-btn");
+const listBox = document.getElementById("thingsToDo");
+const saveInd = document.getElementById("saveIndex");
+
+let todoarray = [];
+
+    addTaskButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        if(text!=""){
+        let task = localStorage.getItem("todo");
+        if (task === null){
+            todoarray=[];
+        }
+        else{
+            todoarray = JSON.parse(task);
+        }
+        todoarray.push(text.value);
+        text.value="";
+        localStorage.setItem("todo", JSON.stringify(todoarray));
+        displayTodo();
+    }
+    });
     
-    let div = document.createElement('div');
+    function displayTodo() {
+        let task = localStorage.getItem("todo");
+        if (task === null) {
+          todoarray = [];
+        } else {
+          todoarray = JSON.parse(task);
+        }
+        let htmlCode = "";
+        todoarray.forEach((list, ind) => {
+          htmlCode += `<div class='newContainer'>
+          <p class='tasklist'>${list}</p>
+          <button onclick='edit(${ind})' class='edit-btn'>Edit</button>
+          <button onclick='deleteTodo(${ind})' class='Delete-btn'>Delete</button>
+       </div>`;
+        });
+        listBox.innerHTML = htmlCode;
+       }
+    
+       function deleteTodo(ind) {
+        let task = localStorage.getItem("todo");
+        todoarray = JSON.parse(task);
+        todoarray.splice(ind, 1);
+        localStorage.setItem("todo", JSON.stringify(todoarray));
+        displayTodo();
+       }
+    
+       function edit(ind) {
+        saveInd.value = ind;
+        let task = localStorage.getItem("todo");
+        todoarray = JSON.parse(task);
+        text.value = todoarray[ind];
+        addTaskButton.style.display = "none";
+        saveTaskButton.style.display = "block";
+       }
+    
+       saveTaskButton.addEventListener("click", () => {
+        let task = localStorage.getItem("todo");
+        todoarray = JSON.parse(task);
+        let id = saveInd.value;
+        todoarray[id] = text.value;
+        addTaskButton.style.display = "block";
+        saveTaskButton.style.display = "none";
+        text.value = "";
+        localStorage.setItem("todo", JSON.stringify(todoarray));
+        displayTodo();
+       });
 
-    let table = document.createElement('table');
-
-    let tr = document.createElement('tr');
-
-    let td1 = document.createElement('td');
-    td1.innerHTML = date;
-
-    let td2 = document.createElement('td');
-    td2.innerHTML = text;
-
-    let td3 = document.createElement('td');
-    td3.setAttribute("id", "td3");
-    let checkbox = document.createElement('input');
-    checkbox.setAttribute("type", "checkbox");
-    td3.appendChild(checkbox);
-
-    let td4 = document.createElement('td');  
-    td4.setAttribute("id", "td4");
-    let delet = document.createElement('button'); 
-    let contenDelet= document.createTextNode("DEL");
-    delet.appendChild(contenDelet);
-    td4.appendChild(delet);
-
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    tr.appendChild(td4);
-    table.appendChild(tr);
-    div.appendChild(table);
-
-    document.getElementById('thingsToDo').appendChild(div);
-
-}
 

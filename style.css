@@ -48,64 +48,116 @@ body {
     margin-top: 1vh;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    height: 6vh;
+    flex-direction: row;
+    align-items: center;
     background-color: #555;
-    height: 5%;
-    font-size: 18px;
+    margin-bottom: 1vh;
     border-radius: 5px;
+    color: white;
 }
 
-#date {
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    margin-left: 0.5vh;
-    width: 17%;
-    background-color: #04AA6D;
-    border: none;
-    color: black;
-    display: flex;
-    border-radius: 5px;
-}
 
-#text-area {
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    width: 65%;
-    display: flex;
-    font-size: 15px;
-    border-radius: 5px;
-}
-
-.submit {
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    margin-right: 0.5vh;
-    width: 7.5%;
+#text {
+    height: 4vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-self: right;
+    width: 77.5%;
+    margin-right: 2.5%;
+    background-color: #04AA6D;
+    margin-left: 2.5%;
     border-radius: 5px;
+    border: none;
+    color: white;
+    text-align: center;
 }
+::placeholder{
+    color: white;
+}
+#add-btn, #save-todo-btn {
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: right;
+    width: 15%;
+    border-radius: 5px;
+    border-color: #04AA6D;
+    background-color: #04AA6D;
+    border-style: solid;
+    color: white;
+    margin-right: 2.5%;
+}
+#add-btn:hover{
+    border-color: #1bc788;
+    background-color: #1bc788;
+    border-style: solid;
+    cursor: pointer;
+}
+
+#save-todo-btn:hover{
+    border-color: #1bc788;
+    background-color: #1bc788;
+    border-style: solid;
+    cursor: pointer;
+}
+
 
 /* ========================== thingsToDo div ========================== */
 #thingsToDo {
     margin-top: 1vh;
     width: 100%;
 }
-table, td, tr{
+.newContainer{
+    width: 100%;
+    display: flex;
+    height: 5vh;
+    flex-direction: row;
+    align-items: center;
+    background-color: #04AA6D;
+    margin-bottom: 1vh;
+    border-radius: 5px;
+    color: white;
+}
+.tasklist{
     height: 4vh;
-    color: black;
-    border: none;
-    border-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: right;
+    width: 60%;
+    margin-right: 2.5%;
+    background-color: #555;
+    margin-left: 2.5%;
+    border-radius: 5px;
 }
-table{
-    width:100%;
+.Delete-btn, .edit-btn{
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: right;
+    width: 15%;
+    border-radius: 5px;
+    border-color: #555;
+    background-color: #555;
+    border-style: solid;
+    color: white;
+    margin-right: 2.5%;
+    
 }
-td{
-    width: 20%;
-    text-align: center;
-    background-color: #02744a;
+
+.Delete-btn:hover{
+    border-color: #848991;
+    background-color: #848991;
+    border-style: solid;
+    cursor: pointer;
 }
-#td3, #td4{
-    width:5%;
+.edit-btn:hover{
+    border-color: #848991;
+    background-color: #848991;
+    border-style: solid;
+    cursor: pointer;
 }
