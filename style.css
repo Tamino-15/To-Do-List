@@ -1,101 +1,123 @@
-body {
-
-    margin-top: 0.5vh;
-    margin-left: 10vh;
-    margin-right: 10vh;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    background: linear-gradient(to bottom left, #88a4d1 50%, #468899 100%);
     height: 100vh;
-    background: linear-gradient(to bottom left, #848991 50%, #acb4b6 100%);
-    background-repeat: no-repeat;
     font-family: 'Rubik', sans-serif;
 }
 
-.navbar {
-    height: 7.5%;
-    width: 100%;
-    background-color: #555;
-    overflow: auto;
-    border-radius: 5px;
+.app {
+    width: 60%;
 }
 
-.navbar a {
-    height: 66%;
-    width: 20%;
-    float: left;
-    text-align: center;
-    padding: 12px;
+@media (max-width:768px) {
+    .app {
+        width: 90%;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+.app h1 {
     color: white;
-    text-decoration: none;
-    font-size: 28px;
+    font-size: 40px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: .5rem .5rem 0 0;
+    background-color: rgb(64, 174, 207);
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.app form {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#title {
-    width: 50%;
-}
-
-.navbar a:hover {
-    background-color: #000;
-}
-
-.active {
-    background-color: #04AA6D;
-}
-
-
-#input {
-    margin-top: 1vh;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: #555;
-    height: 5%;
-    font-size: 18px;
-    border-radius: 5px;
 }
 
-#date {
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    margin-left: 0.5vh;
-    width: 17%;
-    background-color: #04AA6D;
+.app form input {
     border: none;
-    color: black;
-    display: flex;
-    border-radius: 5px;
+    background-color: #eeeeee;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    width: 90%;
 }
 
-#text-area {
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    width: 65%;
-    display: flex;
-    font-size: 15px;
-    border-radius: 5px;
+.app form button {
+    border: none;
+    color: white;
+    background-color: #4d72ec;
+    font-size: 25px;
+    font-weight: 600;
+    height: 42px;
+    width: 10%;
 }
 
-.submit {
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    margin-right: 0.5vh;
-    width: 7.5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
+.app form button:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+    transform: translate(-50%, 50%);
 }
 
-/* ========================== thingsToDo div ========================== */
-#thingsToDo {
-    margin-top: 50px;
+@keyframes shake {
+    0% { color: red; transform: translateY(0)}
+    25% { color:white; transform: translateY(5px) }
+    50% { color: red; transform: translateY(-5px) }
+    75% { color:white; transform: translateY(5px) }
+    100% { color: red; transform: translateY(0) }
 }
-table, th, td {
-    border-width: 2px;
-    border-style: outset;
+
+.app ul {
+    list-style: none;
+    color: #e0e0e0;
+    padding: 0;
 }
-table td button {
-    display: inline;
-    margin-left: 15%;
+
+.app ul li {
+    padding: 10px;
+    background-color: #485b9c;
+    border-bottom: 1px solid #3a4674;
+    width: 82%;
+}
+
+.check {
+    width: 0.8em;
+    height: 0.8em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
+    appearance: none;
+}
+
+.check:checked {
+    background-color: #1dd2af;
+}
+
+.task {
+    font-size: 18px;
+    padding: 0 10px;
+    width: 75%;
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+
+.task:focus {
+    outline: none;
+}
+
+.app ul li i {
+    float: right;
+    cursor: pointer;
+}
+
+.app ul li i:hover {
+    color: rgb(255, 82, 82);
+}
+
+.completed {
+    color: rgba(192, 192, 192, 0.8);
+    text-decoration: line-through;
 }
