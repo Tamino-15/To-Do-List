@@ -17,11 +17,12 @@ function loadTasks() {
     // Get the tasks from localStorage and store it into an array
     let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
 
+    // add an img if there are no tasks
     if (tasks.length === 0) {
         var img = document.createElement("img");
-        //img.src = "https://w7.pngwing.com/pngs/137/522/png-transparent-dreamworks-despicable-me-bob-the-minion-minions-writing-essay-despicable-me-minions.png";
-        img.ser = "image.pmg";
+        img.src = "image.png";
         img.alt = "Todo img";
+        img.setAttribute("style", "margin-top: 80px;");
 
         var div = document.getElementById("image");
         div.appendChild(img);
@@ -69,6 +70,12 @@ function addTask() {
 
     // clear input to write the next task
     task.value = "";
+
+    // remove the img added before
+    //var image = document.getElementById('image');
+    //image.parentNode.removeChild(image);
+
+    document.getElementById("image").style.display = 'none';
 }
 
 function taskComplete(event) {
@@ -94,6 +101,10 @@ function removeTask(event) {
     });
     localStorage.setItem("tasks", JSON.stringify(tasks));
     event.parentElement.remove();
+
+    // add an img if there are no tasks
+    if (tasks.length === 0)
+        document.getElementById("image").style.display = 'block';
 }
 
 // store current task to track changes
