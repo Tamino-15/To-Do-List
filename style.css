@@ -61,11 +61,30 @@
 }
 
 @keyframes shake {
-    0% { color: red; transform: translateY(0)}
-    25% { color:white; transform: translateY(5px) }
-    50% { color: red; transform: translateY(-5px) }
-    75% { color:white; transform: translateY(5px) }
-    100% { color: red; transform: translateY(0) }
+    0% {
+        color: red;
+        transform: translateY(0)
+    }
+
+    25% {
+        color: white;
+        transform: translateY(5px)
+    }
+
+    50% {
+        color: red;
+        transform: translateY(-5px)
+    }
+
+    75% {
+        color: white;
+        transform: translateY(5px)
+    }
+
+    100% {
+        color: red;
+        transform: translateY(0)
+    }
 }
 
 .app ul {

@@ -17,28 +17,21 @@ function loadTasks() {
     // Get the tasks from localStorage and store it into an array
     let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
 
-    // add an img if there are no tasks
+    // display an img if there are no tasks
     if (tasks.length === 0) {
-        var img = document.createElement("img");
-        img.src = "image.png";
-        img.alt = "Todo img";
-        img.setAttribute("style", "margin-top: 80px;");
-
-        var div = document.getElementById("image");
-        div.appendChild(img);
-
-        return;
+        document.querySelector('img').style.display = 'block';
     }
-
-    // Loop through the tasks and add them to the list with HTML
-    tasks.forEach(task => {
-        const list = document.querySelector('ul');
-        const li = document.createElement('li');
-        li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? "checked" : ""}>
+    else {
+        // Loop through the tasks and add them to the list with HTML
+        tasks.forEach(task => {
+            const list = document.querySelector('ul');
+            const li = document.createElement('li');
+            li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? "checked" : ""}>
           <input type="text" value="${task.task}" class="task ${task.completed ? "completed" : ""}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
           <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
-        list.insertBefore(li, list.children[0]);
-    });
+            list.insertBefore(li, list.children[0]);
+        });
+    }
 }
 
 function addTask() {
@@ -102,6 +95,10 @@ function removeTask(event) {
     // add an img if there are no tasks
     if (tasks.length === 0)
         document.getElementById("image").style.display = 'block';
+}
+
+function clearAll(event) {
+    localStorage.clear();
 }
 
 // store current task to track changes
