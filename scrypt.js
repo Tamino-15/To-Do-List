@@ -9,14 +9,27 @@ document.querySelector('form').addEventListener("submit", e => {
 
 // retrieve all the data from localstorage
 function loadTasks() {
-    // check if localStorage has any tasks
+
+    // check if localStorage is empty
     if (localStorage.getItem("tasks") == null)
         return;
 
-    // Get the tasks from localStorage and convert it to an array
+    // Get the tasks from localStorage and store it into an array
     let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
 
-    // Loop through the tasks and add them to the list
+    if (tasks.length === 0) {
+        var img = document.createElement("img");
+        //img.src = "https://w7.pngwing.com/pngs/137/522/png-transparent-dreamworks-despicable-me-bob-the-minion-minions-writing-essay-despicable-me-minions.png";
+        img.ser = "image.pmg";
+        img.alt = "Todo img";
+
+        var div = document.getElementById("image");
+        div.appendChild(img);
+
+        return;
+    }
+
+    // Loop through the tasks and add them to the list with HTML
     tasks.forEach(task => {
         const list = document.querySelector('ul');
         const li = document.createElement('li');
@@ -102,7 +115,7 @@ function editTask(event) {
         return;
     }
 
-    // task already exist
+    // check if task already exist
     tasks.forEach(task => {
         if (task.task === event.value) {
             alert("Task already exist!");
