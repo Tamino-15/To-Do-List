@@ -71,10 +71,7 @@ function addTask() {
     // clear input to write the next task
     task.value = "";
 
-    // remove the img added before
-    //var image = document.getElementById('image');
-    //image.parentNode.removeChild(image);
-
+    // change the display value of image
     document.getElementById("image").style.display = 'none';
 }
 
@@ -126,23 +123,21 @@ function editTask(event) {
         return;
     }
 
-    // check if task already exist
+    // CHECKS
     tasks.forEach(task => {
-        if (task.task === event.value) {
-            alert("Task already exist!");
-            event.value = currentTask;
-            return;
-        }
-    });
-
-    // check if task is done to unable modification
-    tasks.forEach(task => {
+        // check if task is done to unable modification
         if (task.task === currentTask) {
             if (task.completed === true) {
                 alert("You cannot modify a completed task");
                 event.value = currentTask;
                 return;
             }
+        }
+        // check if task already exist
+        if (task.task === event.value) {
+            alert("Task already exist!");
+            event.value = currentTask;
+            return;
         }
     });
 
